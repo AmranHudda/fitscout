@@ -1,0 +1,83 @@
+.up {
+  --bg: #faf9f7;
+  --ink: #1d1b18;
+  --muted: #6f6a62;
+  --line: #e4e0d8;
+  --card: #ffffff;
+  --accent: #1d1b18;
+  --ok: #2f6b3a;
+  --bad: #a23b2a;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  line-height: 1.45;
+}
+@media (prefers-color-scheme: dark) {
+  body { background: #151412 !important; color: #ece8e1 !important; }
+  .up { --bg: #151412; --ink: #ece8e1; --muted: #a39d93; --line: #2d2a26; --card: #1d1b18; --accent: #ece8e1; }
+}
+.up .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.up h1 { font-size: 26px; line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em; }
+.up h2 { font-size: 17px; margin: 0 0 12px; }
+.up .lede { color: var(--muted); margin: 0 0 16px; }
+.up .counts { margin: 0 0 16px; font-variant-numeric: tabular-nums; }
+.up .pick {
+  display: block; text-align: center; padding: 16px; border-radius: 12px;
+  background: var(--accent); color: var(--bg); font-weight: 600; font-size: 17px; cursor: pointer;
+}
+.up .pick input { display: none; }
+.up .progress { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+.up .grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.up .tile { position: relative; margin: 0; min-width: 0; }
+.up .tile img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; background: var(--line); }
+.up .tile.waiting img, .up .tile.uploading img { opacity: 0.5; }
+.up .tile .badge {
+  position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 11px;
+  display: grid; place-items: center; font-size: 13px; background: var(--card); color: var(--ink);
+}
+.up .tile.done .badge { background: var(--ok); color: #fff; }
+.up .tile.error .badge { background: var(--bad); color: #fff; }
+.up .tile p { font-size: 11px; color: var(--muted); margin: 4px 0 0; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.up .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-top: 24px; }
+.up .row { display: flex; gap: 8px; margin-bottom: 8px; }
+.up .field { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); }
+.up .field input {
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100%; box-sizing: border-box;
+}
+.up button { font: inherit; font-weight: 600; border-radius: 10px; padding: 10px 16px; cursor: pointer; border: 1px solid var(--accent); }
+.up button.primary { background: var(--accent); color: var(--bg); width: 100%; padding: 14px; font-size: 16px; }
+.up button.secondary { background: transparent; color: var(--ink); }
+.up button:disabled { opacity: 0.4; cursor: default; }
+.up .note { color: var(--muted); font-size: 13px; }
+.up .error { color: var(--bad); font-size: 14px; }
+.up .brief { margin: 16px 0 8px; }
+.up .pillars { padding-left: 18px; margin: 0 0 8px; }
+.up .pillars li { margin-bottom: 6px; }
+/* Group photos take a full row: photo on the left, "which one is you?" on the right. */
+.up .tile.group { grid-column: 1 / -1; display: grid; grid-template-columns: 38% 1fr; gap: 10px; align-items: start; }
+.up .tile.group .badge { right: auto; left: calc(38% - 28px); }
+.up .who { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.up .who .ask { font-size: 13px; color: var(--ink); font-weight: 600; margin: 0; -webkit-line-clamp: unset; }
+.up .who button {
+  text-align: left; font-size: 13px; font-weight: 400; padding: 8px 10px; border-radius: 8px;
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+}
+.up .who button strong { font-weight: 600; }
+.up .who button.on { border-color: var(--accent); background: var(--accent); color: var(--bg); }
+.up .who .error { font-size: 12px; }
+.up .card.me { margin: 0 0 16px; }
+.up .card.me .note { margin: 0 0 12px; }
+.up .pick.small { padding: 12px; font-size: 15px; margin-bottom: 8px; }
+.up .card.me button { width: 100%; }
+/* Which reference photos had a usable face. */
+.up .refs { list-style: none; padding: 0; margin: 4px 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.up .refs li { min-width: 0; font-size: 11px; color: var(--muted); }
+.up .refs img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; display: block; border: 2px solid var(--ok); box-sizing: border-box; }
+.up .refs li.bad img { border-color: var(--bad); opacity: 0.6; }
+.up .refs li.bad span { color: var(--bad); }
+.up .progress .retry { padding: 4px 10px; font-size: 13px; margin-left: 6px; }
+.up .check { display: flex; align-items: center; gap: 8px; font-size: 14px; margin: 4px 0 12px; }
+.up .check input { width: 18px; height: 18px; margin: 0; }
+.up .field.wide { margin-bottom: 12px; }
+.up .eyebrow a { color: inherit; }

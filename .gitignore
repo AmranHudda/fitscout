@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+# Your photos and everything derived from them stay on this machine.
+inspo/*
+!inspo/README.md
+data/
+.vercel
+
+# Contain the private upload and app links.
+upload-qr.png
+app-qr.png
