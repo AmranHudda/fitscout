@@ -1,6 +1,6 @@
 # What's an interesting agent-heavy workflow you use today?
 
-**Repo:** https://github.com/AmranHudda/fitscout · **Screenshots:** https://github.com/AmranHudda/fitscout/tree/main/docs/screenshots · **Recording:** [30-second screen recording]
+**Repo:** https://github.com/AmranHudda/fitscout · **Screenshots:** https://github.com/AmranHudda/fitscout/tree/main/docs/screenshots
 
 I built **fitscout**, a set of agents that shop secondhand clothes for me. I uploaded 50 photos of outfits I wear. One agent pulled out 150 garments; in group shots it counts only my outfit, because my phone matches my face on-device and boxes me in the copy the model sees. A second agent turned those garments into a style profile and 40 resale searches. Every morning, a tuning agent reviews how each search performed and what I rated. It test-runs candidate searches live on Grailed and rewrites the list, logging a reason for every change. Then a scan judges every listing against my profile from its photos (size, flaws, mislabeled brands), checks the price against what similar items sold for, and pushes the best finds to a home-screen app on my phone. A tracker in the app takes a photo of something specific I want and judges listings by comparing their photos with mine. It also plugs into Meta Muse as an MCP connector, so Muse can watch Facebook Marketplace and send candidates through the same judge.
 
